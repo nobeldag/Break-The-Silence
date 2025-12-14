@@ -21,14 +21,14 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background: radial-gradient(1200px 800px at 20% 0%, rgba(124,58,237,.20), transparent 55%),
                   radial-gradient(1000px 700px at 90% 10%, rgba(255,59,48,.18), transparent 50%),
                   var(--bg);
       color:var(--text);
       line-height:1.6;
     }
-    a{color:#c7d2fe}
+    a{color:inherit}
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
@@ -39,19 +39,24 @@
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
     .brand{display:flex; align-items:center; gap:10px; font-weight:800}
     .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#ff3b30,#7c3aed)}
-    nav ul{list-style:none;display:flex;gap:14px;padding:0;margin:0}
-    nav a{text-decoration:none;color:var(--muted)}
-    nav a:hover{color:var(--text)}
-    .cta{display:flex;gap:10px}
+    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:14px; flex-wrap:wrap}
+    nav a{padding:8px 10px;border-radius:12px;color:var(--muted);text-decoration:none}
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .cta{display:flex; gap:10px; flex-wrap:wrap}
     .btn{border:1px solid var(--border);padding:10px 12px;border-radius:14px;color:var(--text);text-decoration:none}
     .btn.primary{background:linear-gradient(135deg,#ff3b30,#7c3aed);border:none}
-    .card{background:rgba(18,22,38,.72);border:1px solid var(--border);border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+    .card{background:rgba(18,22,38,.72);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow)}
     .pad{padding:18px}
+    h1{font-size:clamp(30px,3.5vw,48px)}
+    .lead{color:var(--muted)}
+    .pillRow{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{border:1px solid var(--border);padding:8px 10px;border-radius:999px;color:var(--muted)}
+    .section{padding:14px 0}
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     @media(max-width:900px){.grid3{grid-template-columns:1fr}}
     .small{color:var(--muted)}
-    .divider{height:1px;background:var(--border);margin:16px 0}
-    footer{text-align:center;color:var(--muted);padding:30px 0}
+    .divider{height:1px;background:var(--border);margin:14px 0}
+    footer{padding:26px 0;color:var(--muted)}
   </style>
 </head>
 
@@ -78,94 +83,104 @@
 
 <main class="wrap">
 
-<section class="card pad" id="mission">
-  <h1>Raise awareness. Demand accountability. Push for reform.</h1>
-  <p class="small">
-    <strong>Break the Silence</strong> is a digital activism campaign focused on exposing police brutality
-    and systemic racism in the United States. The project uses technology and social media to amplify
-    marginalized voices, educate the public, and promote ethical civic engagement.
-  </p>
-</section>
-
-<section class="card pad" id="learn">
-  <h2>Learn</h2>
+<!-- HERO -->
+<section class="hero">
   <div class="grid3">
     <div class="card pad">
-      <strong>Systemic Racism</strong>
-      <p class="small">
-        Systemic racism refers to institutional policies and practices that consistently produce
-        unequal outcomes across racial groups, even without explicit individual intent.
+      <h1>Raise awareness. Demand accountability. Push for reform.</h1>
+      <p class="lead">
+        <strong>Break the Silence</strong> is a technology-driven campaign addressing police brutality
+        and systemic racism through storytelling, education, and civic action.
       </p>
-    </div>
-    <div class="card pad">
-      <strong>Why Visibility Matters</strong>
-      <p class="small">
-        In recent cases (2024–2025), public attention has played a key role in sustaining investigations.
-        Digital platforms preserve evidence, amplify stories, and maintain accountability when media
-        cycles move on.
-      </p>
-    </div>
-    <div class="card pad">
-      <strong>Accountability</strong>
-      <p class="small">
-        Common reform efforts include independent civilian review boards, body-camera transparency,
-        limits on qualified immunity, and mandatory de-escalation training.
-      </p>
+      <div class="pillRow">
+        <span class="pill">#BreakTheSilence</span>
+        <span class="pill">#JusticeForAll</span>
+        <span class="pill">#EndPoliceViolence</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="card pad" id="action">
-  <h2>Take Action</h2>
-  <p class="small">
-    This campaign promotes ethical digital activism by encouraging users to share verified information,
-    contact representatives, support community organizations, and advocate for policy-based reform.
-  </p>
+<!-- MISSION -->
+<section class="section" id="mission">
+  <div class="card pad">
+    <h2>Mission</h2>
+    <p class="small">
+      Police brutality and systemic racism harm communities and often go unaddressed.
+      Break the Silence uses digital tools to amplify voices, educate the public,
+      and encourage accountability-driven reform.
+    </p>
+  </div>
 </section>
 
-<section class="card pad" id="posts">
-  <h2>Campaign Posts</h2>
-  <p class="small">
-    The campaign includes shareable posts that highlight real cases, explain systemic issues,
-    and encourage sustained civic engagement.
-  </p>
+<!-- LEARN -->
+<section class="section" id="learn">
+  <div class="card pad">
+    <h2>Learn</h2>
+    <div class="grid3">
+      <div class="card pad">
+        <strong>Systemic Racism</strong>
+        <p class="small">Institutional policies and practices that produce unequal outcomes across groups.</p>
+      </div>
+      <div class="card pad">
+        <strong>Why Visibility Matters</strong>
+        <p class="small">
+          In 2024–2025, sustained public visibility has played a key role in keeping investigations active.
+          Digital platforms preserve evidence and maintain accountability.
+        </p>
+      </div>
+      <div class="card pad">
+        <strong>Accountability</strong>
+        <p class="small">
+          Civilian review boards, body-camera transparency, limits on qualified immunity,
+          and de-escalation training are widely discussed reform approaches.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="card pad" id="resources">
-  <h2>Resources</h2>
-  <p class="small">
-    All resources listed below are from verified nonprofit organizations and investigative journalism outlets.
-  </p>
+<!-- RESOURCES -->
+<section class="section" id="resources">
+  <div class="card pad">
+    <h2>Resources</h2>
+    <p class="small">
+      The following organizations provide verified data, legal guidance, and investigative reporting.
+    </p>
 
-  <div class="grid3">
-    <div class="card pad">
-      <strong>Know Your Rights</strong>
-      <ul class="small">
-        <li><a href="https://www.aclu.org/know-your-rights" target="_blank">ACLU – Know Your Rights</a></li>
-        <li><a href="https://www.aclu.org/issues/criminal-law-reform/reforming-police" target="_blank">ACLU – Police Reform</a></li>
-      </ul>
-    </div>
-    <div class="card pad">
-      <strong>Community Support</strong>
-      <ul class="small">
-        <li><a href="https://www.communityjusticeexchange.org/nbfn-directory" target="_blank">National Bail Fund Network</a></li>
-        <li><a href="https://campaignzero.org" target="_blank">Campaign Zero</a></li>
-      </ul>
-    </div>
-    <div class="card pad">
-      <strong>Data & Reporting</strong>
-      <ul class="small">
-        <li><a href="https://mappingpoliceviolence.org" target="_blank">Mapping Police Violence</a></li>
-        <li><a href="https://www.themarshallproject.org" target="_blank">The Marshall Project</a></li>
-      </ul>
+    <div class="grid3">
+      <div class="card pad">
+        <strong>Know Your Rights</strong>
+        <ul class="small">
+          <li><a href="https://www.aclu.org/know-your-rights" target="_blank">ACLU – Know Your Rights</a></li>
+          <li><a href="https://www.aclu.org/issues/criminal-law-reform/reforming-police" target="_blank">ACLU – Police Reform</a></li>
+        </ul>
+      </div>
+      <div class="card pad">
+        <strong>Community Support</strong>
+        <ul class="small">
+          <li><a href="https://www.communityjusticeexchange.org/nbfn-directory" target="_blank">National Bail Fund Network</a></li>
+          <li><a href="https://campaignzero.org" target="_blank">Campaign Zero</a></li>
+        </ul>
+      </div>
+      <div class="card pad">
+        <strong>Data & Reporting</strong>
+        <ul class="small">
+          <li><a href="https://mappingpoliceviolence.org" target="_blank">Mapping Police Violence</a></li>
+          <li><a href="https://www.themarshallproject.org" target="_blank">The Marshall Project</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2025 Break the Silence • Built for INST 466 • Student digital activism project<br>
-  Sources: ACLU, Mapping Police Violence, The Marshall Project, Campaign Zero
+  © <span id="year"></span> Break the Silence • Built for INST 466 • Student digital activism project
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </main>
 </body>
