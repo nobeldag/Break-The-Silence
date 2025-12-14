@@ -21,14 +21,14 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       background: radial-gradient(1200px 800px at 20% 0%, rgba(124,58,237,.20), transparent 55%),
                   radial-gradient(1000px 700px at 90% 10%, rgba(255,59,48,.18), transparent 50%),
                   var(--bg);
       color:var(--text);
       line-height:1.6;
     }
-    a{color:inherit}
+    a{color:#c7d2fe}
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
@@ -36,618 +36,113 @@
       border-bottom:1px solid var(--border);
     }
     .wrap{max-width:1100px; margin:0 auto; padding:16px 18px}
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px;
-    }
-    .dot{
-      width:12px; height:12px; border-radius:50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px rgba(255,59,48,.14);
-    }
-    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:14px; flex-wrap:wrap}
-    nav a{
-      text-decoration:none;
-      padding:8px 10px;
-      border-radius:12px;
-      color:var(--muted);
-    }
-    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    .cta{
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end;
-    }
-    .btn{
-      cursor:pointer;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      color:var(--text);
-      padding:10px 12px;
-      border-radius:14px;
-      font-weight:650;
-      box-shadow: none;
-      transition: transform .08s ease, background .2s ease;
-      text-decoration:none;
-      display:inline-flex; align-items:center; gap:8px;
-    }
-    .btn:hover{background:rgba(255,255,255,.08)}
-    .btn:active{transform: translateY(1px)}
-    .btn.primary{
-      border: none;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 24px rgba(124,58,237,.18);
-    }
-    .btn.primary:hover{filter:brightness(1.03)}
-    .hero{
-      padding:40px 0 18px;
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){
-      .heroGrid{grid-template-columns:1fr; }
-      .cta{justify-content:flex-start}
-    }
-    .card{
-      background: rgba(18,22,38,.72);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#ff3b30,#7c3aed)}
+    nav ul{list-style:none;display:flex;gap:14px;padding:0;margin:0}
+    nav a{text-decoration:none;color:var(--muted)}
+    nav a:hover{color:var(--text)}
+    .btn{border:1px solid var(--border);padding:10px 12px;border-radius:14px;color:var(--text);text-decoration:none}
+    .btn.primary{background:linear-gradient(135deg,#ff3b30,#7c3aed);border:none}
+    .card{background:rgba(18,22,38,.72);border:1px solid var(--border);border-radius:18px}
     .pad{padding:18px}
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(30px, 3.5vw, 48px);
-      line-height:1.1;
-      letter-spacing:-.5px;
-    }
-    .lead{color:var(--muted); font-size: 1.05rem; margin:0 0 14px}
-    .pillRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    .pill{
-      font-size:.92rem;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-    }
-    .section{
-      padding:14px 0;
-    }
-    .section h2{
-      margin:0 0 10px;
-      font-size: 1.5rem;
-      letter-spacing:-.2px;
-    }
-    .grid3{
-      display:grid; gap:14px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @media (max-width: 900px){ .grid3{grid-template-columns: 1fr} }
-    .kicker{color:var(--muted); font-weight:700; font-size:.92rem; margin-bottom:6px}
-    .small{color:var(--muted); font-size:.98rem}
-    .divider{height:1px; background:var(--border); margin:14px 0}
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px dashed rgba(255,255,255,.16);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-size:.95rem;
-    }
-
-    /* ACTION TOOL */
-    .toolRow{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      align-items:start;
-    }
-    @media (max-width: 900px){ .toolRow{grid-template-columns:1fr} }
-    .input, select, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background: rgba(0,0,0,.25);
-      color: var(--text);
-      outline:none;
-    }
-    textarea{min-height:110px; resize:vertical}
-    label{display:block; font-weight:650; margin:10px 0 6px}
-    .helper{color:var(--muted); font-size:.92rem; margin-top:6px}
-    .note{
-      border-left: 3px solid var(--accent);
-      padding:12px 12px;
-      border-radius: 14px;
-      background: rgba(255,59,48,.08);
-      border:1px solid rgba(255,59,48,.18);
-      color: var(--text);
-    }
-
-    /* POSTS */
-    .postGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    @media (max-width: 900px){ .postGrid{grid-template-columns:1fr} }
-    .post{
-      display:flex; flex-direction:column; gap:10px;
-      min-height: 190px;
-    }
-    .post .title{font-weight:800}
-    .post .meta{color:var(--muted); font-size:.92rem}
-    .post .copy{color:var(--muted)}
-    .post .hash{margin-top:auto; display:flex; gap:8px; flex-wrap:wrap}
-    .hash span{
-      font-size:.85rem;
-      padding:6px 8px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-    }
-    footer{
-      padding:26px 0 40px;
-      color: var(--muted);
-    }
-    .twoCol{
-      display:grid; gap:14px;
-      grid-template-columns: 1.1fr .9fr;
-    }
-    @media (max-width: 900px){ .twoCol{grid-template-columns:1fr} }
-    .warn{
-      font-size:.92rem;
-      color: var(--muted);
-    }
+    h1{font-size:clamp(32px,4vw,48px);margin:0}
+    h2{margin-top:0}
+    .small{color:var(--muted)}
+    .divider{height:1px;background:var(--border);margin:16px 0}
+    footer{padding:30px 0;color:var(--muted);text-align:center}
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <span class="dot"></span>
-        <span>Break the Silence</span>
-      </div>
-
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#learn">Learn</a></li>
-          <li><a href="#action">Take Action</a></li>
-          <li><a href="#posts">Campaign Posts</a></li>
-          <li><a href="#resources">Resources</a></li>
-        </ul>
-      </nav>
-
-      <div class="cta">
-        <a class="btn" href="#action">Use Action Tool</a>
-        <a class="btn primary" href="#posts">View Posts</a>
-      </div>
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="dot"></span>Break the Silence</div>
+    <nav>
+      <ul>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#learn">Learn</a></li>
+        <li><a href="#action">Take Action</a></li>
+        <li><a href="#posts">Campaign Posts</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </nav>
+    <div>
+      <a class="btn" href="#action">Use Action Tool</a>
+      <a class="btn primary" href="#posts">View Posts</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="heroGrid">
-        <div class="card pad">
-          <div class="kicker">Digital Activism • Storytelling • Education • Accountability</div>
-          <h1>Raise awareness. Demand accountability. Push for reform.</h1>
-          <p class="lead">
-            <strong>Break the Silence</strong> is a technology-driven campaign addressing police brutality and systemic racism.
-            We use social platforms to amplify voices, share credible information, and help people take action.
-          </p>
+<main class="wrap">
 
-          <div class="pillRow">
-            <span class="pill">#BreakTheSilence</span>
-            <span class="pill">#JusticeForAll</span>
-            <span class="pill">#EndPoliceViolence</span>
-            <span class="pill">Weekly Posting Schedule</span>
-          </div>
+<section class="card pad" id="mission">
+  <h1>Raise awareness. Demand accountability. Push for reform.</h1>
+  <p class="small">
+    <strong>Break the Silence</strong> is a student-built digital activism project addressing police brutality and systemic racism in the United States.
+    The project uses technology to amplify marginalized voices, educate the public, and encourage ethical civic engagement.
+  </p>
+</section>
 
-          <div class="divider"></div>
+<section class="card pad" id="learn">
+  <h2>Learn</h2>
+  <p class="small">
+    Recent cases in 2024–2025 show that public visibility often determines whether investigations remain active.
+    Digital platforms preserve evidence, amplify community voices, and sustain accountability when traditional media attention fades.
+  </p>
 
-          <div class="cta">
-            <a class="btn primary" href="#action">Start Taking Action</a>
-            <button class="btn" id="copyHashtagsBtn" type="button">Copy Hashtags</button>
-          </div>
+  <ul class="small">
+    <li><strong>Systemic racism:</strong> Policies and institutional practices that consistently produce unequal outcomes across racial groups.</li>
+    <li><strong>Accountability:</strong> Civilian review boards, body-camera transparency, limits on qualified immunity, and de-escalation standards.</li>
+    <li><strong>Ethical advocacy:</strong> Focusing on verified information, avoiding harassment, and prioritizing community safety.</li>
+  </ul>
+</section>
 
-          <p class="helper" id="copyMsg" aria-live="polite"></p>
-        </div>
+<section class="card pad" id="action">
+  <h2>Take Action</h2>
+  <p class="small">
+    This campaign encourages ethical digital activism by sharing verified information, contacting representatives,
+    supporting community organizations, and promoting policy-based reform rather than personal attacks.
+  </p>
+</section>
 
-        <div class="card pad">
-          <h2 style="margin:0 0 8px">What this website does</h2>
-          <p class="small" style="margin:0 0 10px">
-            This site supports the campaign by organizing information, generating shareable posts,
-            and guiding visitors to next steps.
-          </p>
+<section class="card pad" id="posts">
+  <h2>Campaign Posts</h2>
+  <p class="small">
+    Sample posts promote awareness, policy reform, and responsible civic engagement using credible data and respectful language.
+  </p>
+</section>
 
-          <div class="divider"></div>
+<section class="card pad" id="resources">
+  <h2>Resources</h2>
+  <p class="small">
+    All resources below come from verified nonprofit organizations and investigative journalism outlets.
+  </p>
 
-          <div class="tag">✅ Clear mission + issue</div><br/><br/>
-          <div class="tag">✅ Sample posts you can publish</div><br/><br/>
-          <div class="tag">✅ Action tool: share text + contact scripts</div><br/><br/>
-          <div class="tag">✅ Resources section (editable)</div>
+  <h3>Know Your Rights</h3>
+  <ul class="small">
+    <li><a href="https://www.aclu.org/know-your-rights" target="_blank">ACLU – Know Your Rights</a></li>
+    <li><a href="https://www.aclu.org/issues/criminal-law-reform/reforming-police" target="_blank">ACLU – Police Reform & Accountability</a></li>
+  </ul>
 
-          <div class="divider"></div>
-          <p class="warn">
-            Note: Replace placeholder resource links and add real case examples if your class requires citations.
-          </p>
-        </div>
-      </div>
-    </section>
+  <h3>Community Support</h3>
+  <ul class="small">
+    <li><a href="https://www.communityjusticeexchange.org/nbfn-directory" target="_blank">National Bail Fund Network</a></li>
+    <li><a href="https://campaignzero.org" target="_blank">Campaign Zero</a></li>
+  </ul>
 
-    <!-- MISSION -->
-    <section class="section" id="mission">
-      <div class="card pad">
-        <h2>Mission</h2>
-        <div class="twoCol">
-          <div>
-            <p class="small">
-              Police brutality and systemic racism harm communities and often go unaddressed. <strong>Break the Silence</strong>
-              uses technology to amplify voices, educate the public, and encourage accountability.
-            </p>
-            <div class="divider"></div>
-            <div class="grid3">
-              <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-                <div class="kicker">Expose</div>
-                <div class="small">Highlight ongoing cases and patterns of harm through ethical storytelling.</div>
-              </div>
-              <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-                <div class="kicker">Educate</div>
-                <div class="small">Share explainers, definitions, rights information, and reform-focused content.</div>
-              </div>
-              <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-                <div class="kicker">Mobilize</div>
-                <div class="small">Provide steps: share, contact reps, support families, attend events, donate.</div>
-              </div>
-            </div>
-          </div>
+  <h3>Policy & Reporting</h3>
+  <ul class="small">
+    <li><a href="https://mappingpoliceviolence.org" target="_blank">Mapping Police Violence (National Data)</a></li>
+    <li><a href="https://www.themarshallproject.org" target="_blank">The Marshall Project</a></li>
+  </ul>
+</section>
 
-          <div class="note">
-            <strong>Class alignment (INST 466)</strong><br/>
-            This project uses a web presence + social media distribution to advocate for social justice through technology:
-            scalable messaging, platform amplification, and actionable civic engagement.
-          </div>
-        </div>
-      </div>
-    </section>
+<footer>
+  © 2025 Break the Silence • Built for INST 466 • Student digital activism project<br>
+  Sources: ACLU, Mapping Police Violence, The Marshall Project, Campaign Zero
+</footer>
 
-    <!-- LEARN -->
-    <section class="section" id="learn">
-      <div class="card pad">
-        <h2>Learn</h2>
-        <p class="small" style="margin-top:0">
-          Use these sections as “educational posts” for your campaign. Add real sources, case timelines, and citations if required.
-        </p>
-
-        <div class="grid3">
-          <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-            <div class="kicker">What is systemic racism?</div>
-            <div class="small">
-              Systemic racism refers to policies, practices, and norms that produce unequal outcomes across groups—often
-              even without explicit individual intent.
-            </div>
-          </div>
-          <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-            <div class="kicker">Why visibility matters</div>
-            <div class="small">
-              Digital platforms can amplify stories, preserve evidence, and help communities organize—especially when
-              traditional attention fades quickly.
-            </div>
-          </div>
-          <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-            <div class="kicker">What accountability can look like</div>
-            <div class="small">
-              Transparent investigations, policy reform, community oversight, better training standards, and de-escalation
-              practices are common reform goals.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACTION TOOL -->
-    <section class="section" id="action">
-      <div class="card pad">
-        <h2>Take Action Tool</h2>
-        <p class="small" style="margin-top:0">
-          Choose an action and generate a message you can post or send. (You can screenshot this tool for your assignment.)
-        </p>
-
-        <div class="toolRow">
-          <div>
-            <label for="actionType">Pick an action</label>
-            <select id="actionType">
-              <option value="post">Create a social post</option>
-              <option value="rep">Message a representative</option>
-              <option value="org">Email a local organization</option>
-              <option value="friend">Text a friend to spread awareness</option>
-            </select>
-
-            <label for="topic">Topic focus</label>
-            <input class="input" id="topic" placeholder="Example: accountability, de-escalation, body cams, community oversight" />
-
-            <label for="tone">Tone</label>
-            <select id="tone">
-              <option value="firm">Firm + urgent</option>
-              <option value="informative">Informative</option>
-              <option value="supportive">Supportive</option>
-            </select>
-
-            <label for="custom">Optional details</label>
-            <textarea id="custom" placeholder="Add a case name, city/state, a class concept, or a fact you want included."></textarea>
-
-            <div class="cta" style="margin-top:12px">
-              <button class="btn primary" id="generateBtn" type="button">Generate Message</button>
-              <button class="btn" id="copyBtn" type="button">Copy Output</button>
-            </div>
-            <p class="helper" id="genMsg" aria-live="polite"></p>
-          </div>
-
-          <div>
-            <label for="output">Generated message</label>
-            <textarea id="output" readonly></textarea>
-            <p class="helper">
-              Tip: Replace bracketed placeholders like <em>[YOUR CITY]</em> with your info.
-            </p>
-            <div class="note">
-              <strong>Ethical note:</strong> Avoid doxxing, graphic imagery, or unverified claims. Focus on credible information,
-              respect privacy, and promote safe advocacy.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- POSTS -->
-    <section class="section" id="posts">
-      <div class="card pad">
-        <h2>Campaign Posts (Ready to Publish)</h2>
-        <p class="small" style="margin-top:0">
-          These are starter templates. Swap in real examples, citations, and local resources.
-        </p>
-
-        <div class="postGrid" id="postGrid">
-          <!-- JS will inject posts -->
-        </div>
-      </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section class="section" id="resources">
-      <div class="card pad">
-        <h2>Resources</h2>
-        <p class="small" style="margin-top:0">
-          Replace these with links your professor prefers (local orgs, legal aid, verified reporting, community oversight groups).
-        </p>
-
-        <div class="grid3">
-          <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-            <div class="kicker">Know Your Rights</div>
-            <ul class="small">
-              <li><a href="#" onclick="return false;">[Add Know-Your-Rights resource]</a></li>
-              <li><a href="#" onclick="return false;">[Add legal aid / hotline]</a></li>
-            </ul>
-          </div>
-          <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-            <div class="kicker">Community Support</div>
-            <ul class="small">
-              <li><a href="#" onclick="return false;">[Add local mutual aid group]</a></li>
-              <li><a href="#" onclick="return false;">[Add victim support fund]</a></li>
-            </ul>
-          </div>
-          <div class="card pad" style="background:rgba(255,255,255,.03); box-shadow:none">
-            <div class="kicker">Policy & Reform</div>
-            <ul class="small">
-              <li><a href="#" onclick="return false;">[Add reform policy explainer]</a></li>
-              <li><a href="#" onclick="return false;">[Add oversight / accountability model]</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-        <p class="small">
-          <strong>Deliverables checklist:</strong> Website ✅ | Social media campaign page ✅ | 10+ activism posts ✅ | Final reflection ✅
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <div class="wrap" style="padding:0">
-        <div class="divider"></div>
-        <p style="margin:0">
-          © <span id="year"></span> Break the Silence • Built for INST 466 • Student project website
-        </p>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    // --- YEAR ---
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // --- HASHTAG COPY ---
-    const hashtags = "#BreakTheSilence #JusticeForAll #EndPoliceViolence";
-    const copyHashtagsBtn = document.getElementById("copyHashtagsBtn");
-    const copyMsg = document.getElementById("copyMsg");
-    copyHashtagsBtn.addEventListener("click", async () => {
-      try{
-        await navigator.clipboard.writeText(hashtags);
-        copyMsg.textContent = "Hashtags copied to clipboard.";
-      }catch(e){
-        copyMsg.textContent = "Copy failed. Select and copy manually: " + hashtags;
-      }
-      setTimeout(()=> copyMsg.textContent="", 2400);
-    });
-
-    // --- POSTS (10+) ---
-    const posts = [
-      {
-        title: "Silence protects systems — not people.",
-        meta: "Awareness • Storytelling",
-        copy: "Police brutality and systemic racism aren’t isolated incidents. They’re patterns we must confront with truth, community, and accountability.",
-        tags: ["#BreakTheSilence", "#JusticeForAll"]
-      },
-      {
-        title: "What does accountability mean?",
-        meta: "Education • Reform",
-        copy: "Accountability can include transparent investigations, community oversight, de-escalation standards, and clear consequences for misconduct.",
-        tags: ["#EndPoliceViolence", "#BreakTheSilence"]
-      },
-      {
-        title: "Storytelling is power.",
-        meta: "Humanizing • Community",
-        copy: "Behind every headline is a person, a family, and a community. We honor victims by remembering names and demanding change.",
-        tags: ["#JusticeForAll", "#BreakTheSilence"]
-      },
-      {
-        title: "Know your rights (starter reminder).",
-        meta: "Education • Safety",
-        copy: "Save and share verified know-your-rights resources. Knowledge helps communities stay informed and protected.",
-        tags: ["#JusticeForAll", "#EndPoliceViolence"]
-      },
-      {
-        title: "Small actions add up.",
-        meta: "Action • Engagement",
-        copy: "Share credible info, support affected families, attend local meetings, and contact reps. Consistent action creates pressure for reform.",
-        tags: ["#BreakTheSilence", "#JusticeForAll"]
-      },
-      {
-        title: "Data + truth matter.",
-        meta: "Education • Evidence",
-        copy: "Misinformation spreads fast. This campaign prioritizes credible sources, respectful language, and verified reporting.",
-        tags: ["#BreakTheSilence", "#EndPoliceViolence"]
-      },
-      {
-        title: "Community oversight saves lives.",
-        meta: "Reform • Policy",
-        copy: "Policies like independent review boards and transparent reporting can shift power toward accountability and public trust.",
-        tags: ["#JusticeForAll", "#EndPoliceViolence"]
-      },
-      {
-        title: "De-escalation is not optional.",
-        meta: "Reform • Training",
-        copy: "Training, staffing, and clear protocols reduce harm. Communities deserve safety without fear.",
-        tags: ["#EndPoliceViolence", "#BreakTheSilence"]
-      },
-      {
-        title: "Support families beyond the news cycle.",
-        meta: "Community • Care",
-        copy: "After attention fades, families still live with loss. Donate, share resources, and show up consistently.",
-        tags: ["#JusticeForAll", "#BreakTheSilence"]
-      },
-      {
-        title: "Be loud — but be ethical.",
-        meta: "Digital activism • Responsibility",
-        copy: "Avoid doxxing and unverified claims. Protect privacy, cite sources, and advocate in ways that don’t put people at risk.",
-        tags: ["#BreakTheSilence", "#JusticeForAll"]
-      },
-      {
-        title: "Weekly reminder: take one action today.",
-        meta: "Schedule • Momentum",
-        copy: "Pick one step: share a post, learn a right, contact a rep, or support a local org. Keep the movement moving.",
-        tags: ["#BreakTheSilence", "#EndPoliceViolence"]
-      }
-    ];
-
-    const postGrid = document.getElementById("postGrid");
-    posts.forEach(p => {
-      const el = document.createElement("div");
-      el.className = "card pad post";
-      el.innerHTML = `
-        <div class="title">${p.title}</div>
-        <div class="meta">${p.meta}</div>
-        <div class="copy">${p.copy}</div>
-        <div class="hash">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
-      `;
-      postGrid.appendChild(el);
-    });
-
-    // --- GENERATOR ---
-    const actionType = document.getElementById("actionType");
-    const topic = document.getElementById("topic");
-    const tone = document.getElementById("tone");
-    const custom = document.getElementById("custom");
-    const output = document.getElementById("output");
-    const generateBtn = document.getElementById("generateBtn");
-    const copyBtn = document.getElementById("copyBtn");
-    const genMsg = document.getElementById("genMsg");
-
-    function buildMessage(){
-      const t = (topic.value || "accountability and reform").trim();
-      const extra = (custom.value || "").trim();
-      const style = tone.value;
-
-      const toneLine = style === "firm"
-        ? "We need urgent accountability and concrete reform—now."
-        : style === "informative"
-          ? "Here’s a quick, fact-focused reminder and a way to get involved."
-          : "This is about protecting communities and supporting families with care and consistency.";
-
-      const baseHashtags = " #BreakTheSilence #JusticeForAll #EndPoliceViolence";
-
-      const type = actionType.value;
-      if(type === "post"){
-        return `Break the Silence: ${toneLine}\n\nToday’s focus: ${t}.\n` +
-          `Share credible info, support affected families, and push for policies that reduce harm.\n` +
-          (extra ? `\nDetails: ${extra}\n` : "\n") +
-          `\nTake one action today: share • learn • contact • show up.\n${baseHashtags}`;
-      }
-
-      if(type === "rep"){
-        return `Subject: Support accountability and public safety reforms\n\n` +
-          `Hello [REP NAME],\n\n` +
-          `${toneLine}\n\n` +
-          `I’m a resident of [YOUR CITY/ZIP]. I’m contacting you to support actions related to ${t}, including transparency, community oversight, and clear standards that reduce harm.\n\n` +
-          `Please share what steps your office is taking and what legislation you support to improve accountability and protect communities.\n` +
-          (extra ? `\nAdditional context: ${extra}\n` : "\n") +
-          `\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFO]`;
-      }
-
-      if(type === "org"){
-        return `Subject: Partnering to amplify community resources (Break the Silence)\n\n` +
-          `Hello [ORG NAME],\n\n` +
-          `${toneLine}\n\n` +
-          `I’m building a student-led digital activism project called Break the Silence, focused on raising awareness about police brutality and systemic racism. I’d like to share verified resources your organization provides related to ${t}.\n\n` +
-          `If you’re open to it, please send links, guidance, or upcoming events we can highlight.\n` +
-          (extra ? `\nNotes: ${extra}\n` : "\n") +
-          `\nThank you,\n[YOUR NAME]\n[YOUR CONTACT INFO]`;
-      }
-
-      // friend
-      return `Hey—quick ask. ${toneLine}\n\n` +
-        `I’m following a campaign called Break the Silence focused on ${t}. Can you share one post or read one resource today?\n` +
-        (extra ? `\nExtra: ${extra}\n` : "\n") +
-        `\nHashtags if you post: #BreakTheSilence #JusticeForAll #EndPoliceViolence`;
-    }
-
-    generateBtn.addEventListener("click", () => {
-      output.value = buildMessage();
-      genMsg.textContent = "Message generated. You can copy it now.";
-      setTimeout(()=> genMsg.textContent="", 2400);
-    });
-
-    copyBtn.addEventListener("click", async () => {
-      try{
-        await navigator.clipboard.writeText(output.value || "");
-        genMsg.textContent = "Output copied to clipboard.";
-      }catch(e){
-        genMsg.textContent = "Copy failed. Select the text and copy manually.";
-      }
-      setTimeout(()=> genMsg.textContent="", 2400);
-    });
-
-    // Generate a default message on load
-    output.value = buildMessage();
-  </script>
+</main>
 </body>
 </html>
